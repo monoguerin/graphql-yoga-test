@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src",
     "build": "NODE_ENV=PRODUCTION babel src -d dist --copy-files",
-    "start": "NODE_ENV=PRODUCTION node dist",
+    "start": "node dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
