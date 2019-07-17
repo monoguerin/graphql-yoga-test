@@ -1,7 +1,12 @@
 import dotenv from 'dotenv';
 import { GraphQLServer } from 'graphql-yoga';
 import mongoose from 'mongoose';
-import { models, resolvers, typeDefs } from './graphql';
+import {
+  models,
+  resolvers,
+  typeDefs,
+  loaders,
+} from './graphql';
 
 dotenv.config();
 
@@ -16,7 +21,8 @@ mongoose
       resolvers,
       context: {
         models,
-        db
+        db,
+        loaders,
       }
     });
 

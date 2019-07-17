@@ -23,6 +23,9 @@ export default {
     },
   },
   User: {
-    id: idResolver
+    id: idResolver,
+    projects: (user, _, ctx) => {
+      return ctx.loaders.projects.load(user._id);
+    },
   },
 };

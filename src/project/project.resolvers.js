@@ -27,8 +27,13 @@ export default {
 
       projectToAdd.users.push(userId);
 
+      await projectToAdd.save();
 
-      return projectToAdd.save();
+      return ctx.models.Project
+        .findOne({
+          _id: projectId,
+        })
+        .populate('users');
     }
   },
   Project: {
